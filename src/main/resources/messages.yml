@@ -1,0 +1,25 @@
+message_template: "this is a template."
+permission_error: "You don't have access to this command."
+console_error: "You cant run this command as the console."
+permission: "You don't not have access to this command."
+invalid_args_ban: "invalid arguments - /ban <player> <time(y,d,h)> <reason>"
+invalid_args: "invalid arguments"
+invalid_player: "Player was not found."
+invalid_duration: "Invalid duration - <time(y,d,h)>"
+general_error: "Error"
+
+spawn_admin_error: "Spawn has not been set, please use /setspawn."
+spawn_error: "The spawn has not been set, please contact an administrator."
+setspawn_success: "The spawn has been set."
+setspawn_fail: "You can't set spawn here because it's unsafe."
+
+home_error: "You don't have a home set, please use /sethome."
+sethome_success: "Your home has been set."
+sethome_fail: "Could not set your home"
+
+join_message: "Welcome %player% to the building server!"
+leave_message: "Cya %player%, hope to you see you again!"
+
+teleport_success: "You have been teleported to <destination>."
+teleport_fail: "Teleport cancelled, because you moved."
+tpTimer: "You will be teleported in 5 seconds, don't move."
