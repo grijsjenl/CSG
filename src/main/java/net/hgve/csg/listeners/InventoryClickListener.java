@@ -22,7 +22,6 @@ public class InventoryClickListener implements Listener {
     public void onInventoryClick(InventoryClickEvent e){
 
         // checks
-
         if (!(e.getWhoClicked() instanceof Player)) {
             return;
         }

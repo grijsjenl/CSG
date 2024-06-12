@@ -34,8 +34,8 @@ public class MenuCommand implements CommandExecutor {
 
         //todo add permissions
 
-        //9, 18, 29, 36, 45, 54
-        Inventory menu = Bukkit.createInventory(p, 9, ChatColor.RED + "CSG gui");
+        //9, 18, 27, 36, 45, 54
+        Inventory menu = Bukkit.createInventory(p, 54, ChatColor.RED + "CSG gui");
 
         plugin.getMenuManager().addMenu(p, menu);
 
@@ -62,9 +62,9 @@ public class MenuCommand implements CommandExecutor {
         itemTest.setItemMeta(itemTestMeta);
 
         //Add buttons to menu
-        menu.setItem(0, spawn);
-        menu.setItem(4, home);
-        menu.setItem(8, itemTest);
+        menu.setItem(19, spawn);
+        menu.setItem(22, home);
+        menu.setItem(25, itemTest);
 
         p.openInventory(menu);
 
