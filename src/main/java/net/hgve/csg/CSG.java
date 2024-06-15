@@ -54,7 +54,6 @@ public final class CSG extends JavaPlugin {
         this.getLogger().info("CSG is stopping");
     }
 
-
     public SpawnManager getSpawnManager() {
         return this.spawnManager;
     }

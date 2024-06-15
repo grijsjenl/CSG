@@ -1,6 +1,7 @@
 package net.hgve.csg.commands;
 
 import net.hgve.csg.CSG;
+import net.hgve.csg.events.BanEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -64,6 +65,7 @@ public class BanCommand implements CommandExecutor {
         int durationSec = convertToSeconds(args[1]);
 
         accusedPlayer.ban(reason, Duration.ofSeconds(durationSec), sender.getName());
+        BanEvent banEvent = new BanEvent(durationSec, accusedPlayer, sender, reason);
 
         // END OF EXECUTION --------------------------------------------------------------------------------------------
 
