@@ -26,7 +26,7 @@ public class InventoryTestCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)){
-            plugin.getLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
             return true;
         }
 

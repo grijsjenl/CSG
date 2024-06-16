@@ -22,7 +22,7 @@ public class SpawnCommand implements CommandExecutor {
         //Make sure that they are a player
         if (!(sender instanceof Player)) {
 
-            plugin.getLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
             return true;
         }
 

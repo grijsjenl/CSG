@@ -17,9 +17,11 @@ home_error: "You don't have a home set, please use /sethome."
 sethome_success: "Your home has been set."
 sethome_fail: "Could not set your home"
 
-join_message: "Welcome %player% to the building server!"
-leave_message: "Cya %player%, hope to you see you again!"
+join_message: "Welcome <player> to the building server!"
+leave_message: "Cya <player>, hope to you see you again!"
 
 teleport_success: "You have been teleported to <destination>."
 teleport_fail: "Teleport cancelled, because you moved."
 tpTimer: "You will be teleported in 5 seconds, don't move."
+
+banlist_entry: ""

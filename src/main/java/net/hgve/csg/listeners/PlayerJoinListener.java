@@ -5,6 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.util.Map;
+
 public class PlayerJoinListener implements Listener  {
 
     private final CSG plugin;
@@ -16,7 +18,7 @@ public class PlayerJoinListener implements Listener  {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
-        event.setJoinMessage("Welcome " + event.getPlayer().getName() + " to the building server!");
+        event.joinMessage(plugin.getMessageManager().getMessage("join_message", Map.of("player", event.getPlayer().getName())));
 
     }
 }
