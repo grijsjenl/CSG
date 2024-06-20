@@ -45,6 +45,7 @@ public final class CSG extends JavaPlugin {
         this.getCommand("menu").setExecutor(new MenuCommand(this));
         this.getCommand("ban").setExecutor(new BanCommand(this));
         this.getCommand("unban").setExecutor(new UnbanCommand(this));
+        this.getCommand("banlist").setExecutor(new BanListCommand(this));
 
     }
 

@@ -21,4 +21,5 @@ public class PlayerJoinListener implements Listener  {
         event.joinMessage(plugin.getMessageManager().getMessage("join_message", Map.of("player", event.getPlayer().getName())));
 
     }
+
 }
