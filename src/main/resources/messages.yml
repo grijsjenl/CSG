@@ -22,6 +22,6 @@ leave_message: "Cya <player>, hope to you see you again!"
 
 teleport_success: "You have been teleported to <destination>."
 teleport_fail: "Teleport cancelled, because you moved."
-tpTimer: "You will be teleported in 5 seconds, don't move."
+tp_timer: "You will be teleported in 5 seconds, don't move."
 
 banlist_entry: ""
