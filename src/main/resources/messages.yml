@@ -4,7 +4,7 @@ console_error: "You cant run this command as the console."
 permission: "You don't not have access to this command."
 invalid_args_ban: "invalid arguments - /ban <player> <time(y,d,h)> <reason>"
 invalid_args: "invalid arguments - <args>"
-invalid_player: "Player was not found."
+invalid_player: "<Player> was not found."
 invalid_duration: "Invalid duration - <time(y,d,h)>"
 general_error: "Error"
 
