@@ -28,7 +28,7 @@ public class TeleportManager {
             if (queuedPlayerTeleport.containsKey(p)) {
 
                 p.teleport(destination);
-                p.sendMessage(plugin.getMessageManager().getMessage("teleport_success").replace("<destination>", destinationName));
+                p.sendMessage(plugin.getMessageManager().getMessage("teleport_success", Map.of("destination", destinationName)));
                 this.queuedPlayerTeleport.remove(p);
 
             }

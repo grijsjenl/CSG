@@ -8,8 +8,8 @@ import org.bukkit.event.HandlerList;
 public class BanEvent extends Event {
 
     private static final HandlerList handlerList = new HandlerList();
-    private final int duration;
 
+    private final int duration;
     private final OfflinePlayer bannedPlayer;
     private final CommandSender commandSender;
     private final String reason;

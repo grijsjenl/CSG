@@ -1,9 +1,16 @@
 package net.hgve.csg.commands;
 
+import com.destroystokyo.paper.profile.PlayerProfile;
+import io.papermc.paper.ban.BanListType;
 import net.hgve.csg.CSG;
+import org.bukkit.BanEntry;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import java.util.Map;
 
 public class BanListCommand implements CommandExecutor {
 
@@ -15,12 +22,47 @@ public class BanListCommand implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         //todo /banlist <username>
         //returns <reason, duration, command sender>
 
+        if (!(sender.hasPermission("CSG.banlist"))) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("permission_error"));
+            return true;
+        }
 
+        if (!(args.length == 1)) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("invalid_args"));
+            return true;
+        }
+
+        OfflinePlayer bannerPlayer = Bukkit.getServer().getOfflinePlayer(args[0]);
+
+        if (!(bannerPlayer.isBanned())) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("playerNotBanned"));
+            return true;
+        }
+
+        if (sender == bannerPlayer) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("SelfCommandRestriction"));
+            return true;
+        }
+
+        BanEntry<PlayerProfile> banEntry = plugin.getServer().getBanList(BanListType.PROFILE).getBanEntry(bannerPlayer.getPlayerProfile());
+
+        String duration = "placeholder";
+
+        sender.sendMessage(plugin.getMessageManager().getMessage("banlist_entry",
+                Map.of("bannedplayer", banEntry.getBanTarget().getName(),
+                        "source", banEntry.getSource(),
+                        "duration", duration,
+                        "expires", banEntry.getExpiration().toString(),
+                        "reason", banEntry.getReason())));
 
         return false;
+
+        //banlist_entry: "<bannedplayer> banned by <source> for <duration>
+        //                expires: <expires>
+        //                reason: <reason>"
     }
 }

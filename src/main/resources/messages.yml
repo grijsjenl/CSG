@@ -7,6 +7,7 @@ invalid_args: "invalid arguments - <args>"
 invalid_player: "<Player> was not found."
 invalid_duration: "Invalid duration - <time(y,d,h)>"
 general_error: "Error"
+SelfCommandRestriction: "You can't use this command on yourself."
 
 spawn_admin_error: "Spawn has not been set, please use /setspawn."
 spawn_error: "The spawn has not been set, please contact an administrator."
@@ -18,10 +19,13 @@ sethome_success: "Your home has been set."
 sethome_fail: "Could not set your home"
 
 join_message: "Welcome <player> to the building server!"
-leave_message: "Cya <player>, hope to you see you again!"
+quit_message: "Cya <player>, hope to you see you again!"
 
 teleport_success: "You have been teleported to <destination>."
 teleport_fail: "Teleport cancelled, because you moved."
 tp_timer: "You will be teleported in 5 seconds, don't move."
 
-banlist_entry: ""
+banlist_entry: "<bannedplayer> banned by <source> for <duration>
+                expires: <expires>
+                reason: <reason>"
+playerNotBanned: "This player is not banned."
