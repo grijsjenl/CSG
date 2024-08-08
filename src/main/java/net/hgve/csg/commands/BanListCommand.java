@@ -48,9 +48,26 @@ public class BanListCommand implements CommandExecutor {
             return true;
         }
 
+        if () {
+            sender.sendMessage(plugin.getMessageManager().getMessage(""));
+            return true;
+        }
+
         BanEntry<PlayerProfile> banEntry = plugin.getServer().getBanList(BanListType.PROFILE).getBanEntry(bannerPlayer.getPlayerProfile());
 
         String duration = "placeholder";
+
+        int banDurationSec = banEntry.getExpiration().getSeconds();
+
+        if (banDurationSec >= 31557600) {
+            duration = String.valueOf(banDurationSec / 31557600) + 'y';
+        } else if (banDurationSec >= 86400) {
+            duration = String.valueOf(banDurationSec / 86400) + 'd';
+        } else if (banDurationSec >= 3600) {
+            duration = String.valueOf(banDurationSec / 3600) + 'h';
+        } else {
+            sender.sendMessage(plugin.getMessageManager().getMessage("invalid_args"));
+        }
 
         sender.sendMessage(plugin.getMessageManager().getMessage("banlist_entry",
                 Map.of("bannedplayer", banEntry.getBanTarget().getName(),

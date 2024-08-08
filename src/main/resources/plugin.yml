@@ -28,3 +28,7 @@ commands:
     description: Open a custom inventory
   ban:
     description: Ban a player
+  unban:
+    description: Unban a player
+  banlist:
+    description: Shows a list of the currently banned players
