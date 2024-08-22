@@ -23,10 +23,14 @@ public class UnbanCommand implements CommandExecutor {
             return true;
         }
 
+        sender.sendMessage("perms check pass");
+
         if (!(args.length == 1)) {
             sender.sendMessage(plugin.getMessageManager().getMessage("invalid_args_ban"));
             return true;
         }
+
+        sender.sendMessage("args check pass");
 
         OfflinePlayer bannedPlayer = Bukkit.getServer().getOfflinePlayer(args[0]);
 
@@ -35,10 +39,15 @@ public class UnbanCommand implements CommandExecutor {
             return true;
         }
 
+        sender.sendMessage("played before check pass");
+
+
         if (!bannedPlayer.isBanned()) {
             sender.sendMessage(plugin.getMessageManager().getMessage("invalid_player"));
             return true;
         }
+
+        sender.sendMessage("isbanned check pass");
 
         Bukkit.getBannedPlayers().remove(bannedPlayer);
 

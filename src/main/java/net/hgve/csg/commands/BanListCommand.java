@@ -73,7 +73,6 @@ public class BanListCommand implements CommandExecutor {
                             "duration", duration,
                             "expires", banEntry.getExpiration().toString(),
                             "reason", banEntry.getReason())));
-            return true; //maybe false?
 //        } else if (args.length == 0) {
 //            Set<BanEntry> bannedPlayerList = plugin.getServer().getBanList(BanListType.PROFILE).getBanEntries();
 //
@@ -82,8 +81,8 @@ public class BanListCommand implements CommandExecutor {
 //            return true;
         } else {
             sender.sendMessage(plugin.getMessageManager().getMessage("test_command_fail"));
-            return true;
         }
+        return true; //maybe false?
 
         //banlist_entry: "<bannedplayer> banned by <source> for <duration>
         //                expires: <expires>
