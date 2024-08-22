@@ -29,3 +29,8 @@ banlist_entry: "<bannedplayer> banned by <source> for <duration>
                 expires: <expires>
                 reason: <reason>"
 playerNotBanned: "This player is not banned."
+all_banned_player_banlist: "Banned players:\n
+                            <BannedPlayerName> until <expires>"
+
+test_invalid_args: "arg test failed"
+test_command_fail: "command failed"
