@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class SetHomeCommand implements CommandExecutor {
 
@@ -21,7 +22,7 @@ public class SetHomeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            sender.sendMessage(plugin.getMessageManager().getMessage("console_error", Map.of("command", "/sethome")));
             return true;
         }
 

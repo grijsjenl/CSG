@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Map;
+
 public class TestCommand implements CommandExecutor {
 
     private final CSG plugin;
@@ -18,7 +20,7 @@ public class TestCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
 
         if (!(sender instanceof Player)) {
-            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            sender.sendMessage(plugin.getMessageManager().getMessage("console_error", Map.of("command", "/test")));
             return true;
         }
 

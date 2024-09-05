@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
+import java.util.Map;
 
 public class MenuCommand implements CommandExecutor {
 
@@ -26,7 +27,7 @@ public class MenuCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            sender.sendMessage(plugin.getMessageManager().getMessage("console_error", Map.of("command", "/menu")));
             return true;
         }
 

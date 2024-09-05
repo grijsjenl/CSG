@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class InventoryTestCommand implements CommandExecutor {
 
@@ -26,7 +27,7 @@ public class InventoryTestCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)){
-            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            sender.sendMessage(plugin.getMessageManager().getMessage("console_error", Map.of("command", "/inventorytest")));
             return true;
         }
 

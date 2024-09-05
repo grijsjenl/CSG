@@ -8,6 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Map;
+
 public class SpawnCommand implements CommandExecutor {
 
     private final CSG plugin;
@@ -21,8 +23,7 @@ public class SpawnCommand implements CommandExecutor {
 
         //Make sure that they are a player
         if (!(sender instanceof Player)) {
-
-            plugin.getComponentLogger().info(plugin.getMessageManager().getMessage("console_error"));
+            sender.sendMessage(plugin.getMessageManager().getMessage("console_error", Map.of("command", "/spawn")));
             return true;
         }
 

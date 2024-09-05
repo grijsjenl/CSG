@@ -1,6 +1,10 @@
 package net.hgve.csg.commands;
 
+import com.destroystokyo.paper.profile.PlayerProfile;
+import io.papermc.paper.ban.BanListType;
 import net.hgve.csg.CSG;
+import org.bukkit.BanEntry;
+import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -23,14 +27,10 @@ public class UnbanCommand implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage("perms check pass");
-
         if (!(args.length == 1)) {
             sender.sendMessage(plugin.getMessageManager().getMessage("invalid_args_ban"));
             return true;
         }
-
-        sender.sendMessage("args check pass");
 
         OfflinePlayer bannedPlayer = Bukkit.getServer().getOfflinePlayer(args[0]);
 
@@ -39,17 +39,13 @@ public class UnbanCommand implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage("played before check pass");
-
-
         if (!bannedPlayer.isBanned()) {
             sender.sendMessage(plugin.getMessageManager().getMessage("invalid_player"));
             return true;
         }
 
-        sender.sendMessage("isbanned check pass");
-
-        Bukkit.getBannedPlayers().remove(bannedPlayer);
+        BanEntry<PlayerProfile> banEntry = Bukkit.getBanList(BanListType.PROFILE).getBanEntry(bannedPlayer.getPlayerProfile());
+        banEntry.remove();
 
         return true;
     }

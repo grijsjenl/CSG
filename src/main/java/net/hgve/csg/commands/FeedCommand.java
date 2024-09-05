@@ -9,8 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import javax.swing.text.StyledEditorKit;
-
 public class FeedCommand implements CommandExecutor {
 
     private final CSG plugin;
