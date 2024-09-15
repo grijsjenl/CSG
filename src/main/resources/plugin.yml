@@ -32,3 +32,5 @@ commands:
     description: Unban a player
   banlist:
     description: Shows a list of the currently banned players
+  fly:
+    description: Allows you to fly
