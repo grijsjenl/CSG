@@ -18,7 +18,6 @@ public class FlyCommand implements CommandExecutor {
         this.plugin = plugin;
     }
 
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -54,16 +53,16 @@ public class FlyCommand implements CommandExecutor {
             Player target = Bukkit.getServer().getPlayerExact(args[0]);
 
             if (target == null) {
-                sender.sendMessage(plugin.getMessageManager().getMessage(""));
+                sender.sendMessage(plugin.getMessageManager().getMessage("invalid_player", Map.of("player", target.getName())));
                 return true;
             }
 
             if (target.getAllowFlight()) {
                 target.setAllowFlight(false);
-                sender.sendMessage("Enabled flying for " + target.getName());
+                sender.sendMessage(ChatColor.AQUA + "Enabled flying for " + target.getName());
             } else {
                 target.setAllowFlight(true);
-                sender.sendMessage("Disabled flying for " + target.getName());
+                sender.sendMessage(ChatColor.AQUA + "Disabled flying for " + target.getName());
             }
             return true;
         }
