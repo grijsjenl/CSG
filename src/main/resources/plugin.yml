@@ -34,3 +34,5 @@ commands:
     description: Shows a list of the currently banned players
   fly:
     description: Allows you to fly
+  teleportbow:
+    description: Teleports where you shoot

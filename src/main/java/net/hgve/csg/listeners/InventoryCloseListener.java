@@ -21,7 +21,7 @@ public class InventoryCloseListener implements Listener {
             return;
         }
 
-        if (!plugin.getMenuManager().hasMenuOpen((Player) event.getPlayer())) {
+        if (!(plugin.getMenuManager().hasMenuOpen((Player) event.getPlayer()))) {
             return;
         }
 

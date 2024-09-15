@@ -25,17 +25,17 @@ public class PlayerMoveListener implements Listener {
         }
     }
 
-    private boolean hasPlayerMoved(Player p) {
+    private boolean hasPlayerMoved(Player player) {
 
-        if (p.getLocation().getBlockX() != plugin.getTeleportManager().getOrginalLocation(p).getBlockX()) {
+        if (player.getLocation().getBlockX() != plugin.getTeleportManager().getOrginalLocation(player).getBlockX()) {
             return true;
         }
 
-        if (p.getLocation().getBlockZ() != plugin.getTeleportManager().getOrginalLocation(p).getBlockZ()) {
+        if (player.getLocation().getBlockZ() != plugin.getTeleportManager().getOrginalLocation(player).getBlockZ()) {
             return true;
         }
 
-        if (p.getLocation().getBlockY() != plugin.getTeleportManager().getOrginalLocation(p).getBlockY()) {
+        if (player.getLocation().getBlockY() != plugin.getTeleportManager().getOrginalLocation(player).getBlockY()) {
             return true;
         }
 

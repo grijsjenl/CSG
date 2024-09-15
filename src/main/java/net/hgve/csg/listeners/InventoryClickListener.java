@@ -19,37 +19,37 @@ public class InventoryClickListener implements Listener {
     }
 
     @EventHandler
-    public void onInventoryClick(InventoryClickEvent e){
+    public void onInventoryClick(InventoryClickEvent event){
 
         // checks
-        if (!(e.getWhoClicked() instanceof Player)) {
+        if (!(event.getWhoClicked() instanceof Player)) {
             return;
         }
 
-        Player player = (Player) e.getWhoClicked();
+        Player player = (Player) event.getWhoClicked();
 
-        if (!plugin.getMenuManager().hasMenuOpen(player)) {
+        if (!(plugin.getMenuManager().hasMenuOpen(player))) {
             return;
         }
 
-        if (!e.getView().getTitle().equals(ChatColor.RED + "CSG gui")) {
+        if (!(event.getView().getTitle().equals(ChatColor.RED + "CSG gui"))) {
             return;
         }
 
-        if (e.getClick().equals(ClickType.SHIFT_LEFT)) {
-            plugin.getLogger().info( e.getClick() + " click - " + e.getSlot());
-            e.setCancelled(true);
+        if (event.getClick().equals(ClickType.SHIFT_LEFT)) {
+            plugin.getLogger().info( event.getClick() + " click - " + event.getSlot());
+            event.setCancelled(true);
             return;
         }
 
-        if (e.getClick().equals(ClickType.SHIFT_RIGHT)) {
-            plugin.getLogger().info( e.getClick() + " click - " + e.getSlot());
-            e.setCancelled(true);
+        if (event.getClick().equals(ClickType.SHIFT_RIGHT)) {
+            plugin.getLogger().info( event.getClick() + " click - " + event.getSlot());
+            event.setCancelled(true);
             return;
         }
 
-        if (e.getClick().equals(ClickType.DOUBLE_CLICK)) {
-            plugin.getLogger().info( e.getClick() + " click - " + e.getSlot());
+        if (event.getClick().equals(ClickType.DOUBLE_CLICK)) {
+            plugin.getLogger().info( event.getClick() + " click - " + event.getSlot());
             return;
         }
 
@@ -59,20 +59,20 @@ public class InventoryClickListener implements Listener {
 
         // end of checks
 
-        if (e.isLeftClick()) {
+        if (event.isLeftClick()) {
 
-            plugin.getLogger().info("left click - " + e.getSlot());
-            e.setCancelled(true);
+            plugin.getLogger().info("left click - " + event.getSlot());
+            event.setCancelled(true);
 
-            if (e.getClickedInventory() == null || !e.getClickedInventory().equals(e.getInventory())) {
+            if (event.getClickedInventory() == null || !event.getClickedInventory().equals(event.getInventory())) {
                 return;
             }
 
-            if (e.getCurrentItem() == null) {
+            if (event.getCurrentItem() == null) {
                 return;
             }
 
-            switch (e.getCurrentItem().getType()) {
+            switch (event.getCurrentItem().getType()) {
 
                 case BEDROCK:
                     player.sendMessage("test bedrock");
@@ -92,8 +92,8 @@ public class InventoryClickListener implements Listener {
                     break;
             }
         } else {
-            plugin.getLogger().info( e.getClick() + "click - " + e.getSlot());
-            e.setCancelled(true);
+            plugin.getLogger().info( event.getClick() + "click - " + event.getSlot());
+            event.setCancelled(true);
         }
 
     }

@@ -9,7 +9,7 @@ public class BlockBreakListener implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
 
-        if (!event.getPlayer().hasPermission("CSG.BreakBlockPerms")) {
+        if (!(event.getPlayer().hasPermission("CSG.BreakBlockPerms"))) {
 
             event.setCancelled(true);
 

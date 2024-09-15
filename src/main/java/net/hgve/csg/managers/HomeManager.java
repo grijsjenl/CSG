@@ -40,12 +40,12 @@ public class HomeManager {
 
     }
 
-    public void setHome(Player p, Location location) throws IOException {
+    public void setHome(Player player, Location location) throws IOException {
 
         // maybe check if it is safe.
 
-        this.homesYml.set(p.getName(), location);
-        this.homeMap.put(p, location);
+        this.homesYml.set(player.getName(), location);
+        this.homeMap.put(player, location);
         homesYml.save(homesFile);
 
     }
